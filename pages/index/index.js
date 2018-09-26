@@ -1,5 +1,5 @@
+var timer;
 Page({
-
   onLoad: function(e) {
     var textColor = "rgb(255, 255, 255)";
     var speed = 10;
@@ -13,7 +13,7 @@ Page({
         // 定义文字移动的坐标
         var xPosition = screenHeight;
 
-        var timer = setInterval(function() {
+        timer = setInterval(function() {
 
           var textCanvas = wx.createCanvasContext('text-canvas');
 
