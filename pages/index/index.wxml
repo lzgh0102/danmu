@@ -1,3 +1,6 @@
 <view>
   <canvas id='text-canvas' canvas-id='text-canvas' bindtouchstart='stopIt'></canvas>
+  <view class="weui-cell weui-cell_input">
+    <input class="weui-input section-input" placeholder="将会获取焦点" />
+  </view>
 </view>
