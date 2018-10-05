@@ -1,7 +1,7 @@
 /**index.wxss**/
 
 page {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
 }
 
 #text-canvas {
@@ -18,9 +18,9 @@ page {
   position: fixed;
   bottom: 0;
   width: 100%;
-  border: 50px 50px;
+  border: 1px solid white;
   border-radius: 5px;
   border-color: black;
-  /* color: red; */
-  /* box-sizing: border-box; */
+  color: white;
+  box-sizing: border-box;
 }

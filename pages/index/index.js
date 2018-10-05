@@ -1,7 +1,7 @@
 var timer;
 Page({
   onLoad: function(e) {
-    var textColor = "rgb(255, 0, 0)";
+    var textColor = "rgb(255, 255, 255)";
     var speed = 100;
     var text = "测试文字";
     var thisPage = this;
