@@ -1,6 +1,6 @@
 <view>
-  <canvas id='text-canvas' canvas-id='text-canvas' bindtouchstart='stopIt'></canvas>
-  <view class="weui-cell weui-cell_input">
-    <input class="weui-input section-input" placeholder="将会获取焦点" />
+  <canvas id='text-canvas' canvas-id='text-canvas' bindtap='clickCanvas'></canvas>
+  <view class="weui-cell weui-cell_input bottom {{showView?'show':'hide'}}">
+    <input class="weui-input section-input" value="{{text}}" placeholder="请输入文字或表情" bindinput="getInput" bindfocus="focusInput" />
   </view>
 </view>

@@ -10,17 +10,28 @@ page {
   width: 100%;
 }
 
+.bottom {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
 .section-input {
   height: 5%;
-  /* background:#F4F4F4;  */
   padding: 16rpx;
   /* display: flex; */
   position: fixed;
   bottom: 0;
-  width: 100%;
-  border: 1px solid white;
-  border-radius: 5px;
-  border-color: black;
+  border: 2px solid white;
+  border-radius: 20px;
+  border-color: white;
   color: white;
   box-sizing: border-box;
 }
