@@ -11,7 +11,7 @@ Page({
     showView: (options.showView == "true" ? true : false);
 
     var textColor = "rgb(255, 255, 255)";
-    var speed = 10;
+    var speed = 5;
     var thisPage = this;
     wx.getSystemInfo({
       success: function(res) {
