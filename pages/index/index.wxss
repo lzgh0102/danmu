@@ -11,6 +11,10 @@ page {
 }
 
 .bottom {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
   flex-direction: row;
   justify-content: center;
 }
@@ -24,14 +28,49 @@ page {
 }
 
 .section-input {
-  height: 5%;
-  padding: 16rpx;
-  /* display: flex; */
-  position: fixed;
-  bottom: 0;
+  padding: 15rpx;
   border: 2px solid white;
   border-radius: 20px;
   border-color: white;
   color: white;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+}
+
+.section-image {
+  margin-left: 20px;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100000;
+  background: grey;
+  padding-top: 20rpx;
+}
+
+.flex-wrp {
+  height: 160rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-item {
+  width: 60rpx;
+  height: 60rpx;
+}
+.on {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.font-color-title {
+  color: white;
+  text-align: center;
 }
