@@ -4,19 +4,13 @@
     <input class="section-input" value="{{text}}" placeholder="请输入文字或表情" bindinput="getInput" bindfocus="focusInput" />
     <image class="section-image" src="../../image/settings.png" bindtap="clickSetting"></image>
   </view>
-  <cover-view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
-    <cover-view class="font-color-title">字体颜色</cover-view>
+  <cover-view animation="{{animationData}}" class="setting-box" wx:if="{{showModalStatus}}">
+    <cover-view class="setting-title">
+      <cover-view wx:for="{{settingItems}}" class="setting-title-itme {{currentSettingItem==item.id?'setting-item-on':''}}" id="{{item.id}}" bindtap='onchangeSettingItem'>{{item.name}}</cover-view>
+    </cover-view>
+    <cover-view class="div-line"></cover-view>
     <cover-view class="flex-wrp">
-      <cover-view style='background-color: white' class="flex-item {{currentColor=='white'?'on':''}}" id="white" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: red' class="flex-item {{currentColor=='red'?'on':''}}" id="red" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: SpringGreen ' class="flex-item {{currentColor=='SpringGreen'?'on':''}}" id="SpringGreen" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: yellow' class="flex-item {{currentColor=='yellow'?'on':''}}" id="yellow" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: lime ' class="flex-item {{currentColor=='lime'?'on':''}}" id="lime" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: green' class="flex-item {{currentColor=='green'?'on':''}}" id="green" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: aqua' class="flex-item {{currentColor=='aqua'?'on':''}}" id="aqua" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: blue' class="flex-item {{currentColor=='blue'?'on':''}}" id="blue" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: purple' class="flex-item {{currentColor=='purple'?'on':''}}" id="purple" bindtap='onchangeColor'></cover-view>
-      <cover-view style='background-color: DeepPink' class="flex-item {{currentColor=='DeepPink'?'on':''}}" id="DeepPink" bindtap='onchangeColor'></cover-view>
+      <cover-view wx:for="{{fontColorItems}}" style='background-color: {{item}}' class="flex-item {{currentColor==item?'on':''}}" id="{{item}}" bindtap='onchangeColor'></cover-view>
     </cover-view>
   </cover-view>
 </view>

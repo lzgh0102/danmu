@@ -6,14 +6,26 @@ Page({
     text: "",
     showModalStatus: false,
     animationData: {},
-    currentColor: "white"
+    currentColor: "white",
+    currentSettingItem: "fontColor",
+    settingItems: [{
+      id: "fontColor",
+      name: "字体颜色"
+    }, {
+      id: "fontSize",
+      name: "字体大小"
+    }, {
+      id: "fontSpeed",
+      name: "文字速度"
+    }],
+    fontColorItems: ["white", "red", "SpringGreen", "yellow", "lime", "green", "aqua", "blue", "purple", "DeepPink"]
   },
 
   onLoad: function(options) {
 
     showView: (options.showView == "true" ? true : false);
 
-    var speed = 5;
+    var speed = 500;
     var thisPage = this;
     wx.getSystemInfo({
       success: function(res) {
@@ -24,7 +36,7 @@ Page({
         var xPosition = screenHeight;
 
         timer = setInterval(function() {
-          
+
           var text = thisPage.data.text;
           var textColor = thisPage.data.currentColor;
 
@@ -61,7 +73,7 @@ Page({
     that.setData({
       showView: (!that.data.showView)
     });
-    
+
     that.hideModal();
   },
 
@@ -75,6 +87,12 @@ Page({
   onchangeColor: function(e) {
     this.setData({
       currentColor: e.target.id
+    });
+  },
+
+  onchangeSettingItem: function(e) {
+    this.setData({
+      currentSettingItem: e.target.id
     });
   },
 
