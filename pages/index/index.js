@@ -7,6 +7,8 @@ Page({
     showModalStatus: false,
     animationData: {},
     currentColor: "white",
+    currentSize: 0.5,
+    currentSpeed: 5,
     currentSettingItem: "fontColor",
     settingItems: [{
       id: "fontColor",
@@ -18,14 +20,33 @@ Page({
       id: "fontSpeed",
       name: "文字速度"
     }],
-    fontColorItems: ["white", "red", "SpringGreen", "yellow", "lime", "green", "aqua", "blue", "purple", "DeepPink"]
+    fontColorItems: ["white", "red", "SpringGreen", "yellow", "lime", "green", "aqua", "blue", "purple", "DeepPink"],
+    fontSizeItems: [{
+      size: 0.6,
+      name: "大"
+    }, {
+      size: 0.5,
+      name: "中"
+    }, {
+      size: 0.4,
+      name: "小"
+    }],
+    fontSpeedItems: [{
+      size: 3,
+      name: "快"
+    }, {
+      size: 5,
+      name: "中"
+    }, {
+      size: 10,
+      name: "慢"
+    }],
   },
 
   onLoad: function(options) {
 
     showView: (options.showView == "true" ? true : false);
 
-    var speed = 500;
     var thisPage = this;
     wx.getSystemInfo({
       success: function(res) {
@@ -35,6 +56,10 @@ Page({
         // 定义文字移动的坐标
         var xPosition = screenHeight;
 
+        var speed = thisPage.data.currentSpeed;
+        if (!speed) {
+          speed = 5;
+        }
         timer = setInterval(function() {
 
           var text = thisPage.data.text;
@@ -49,7 +74,11 @@ Page({
           textCanvas.rotate(0.5 * Math.PI);
 
           // 文字宽度 中间横条0.5倍屏幕宽
-          textCanvas.setFontSize(parseInt(screenWidth * 0.5));
+          var textSize = thisPage.data.currentSize;
+          if (!textSize) {
+            textSize = 0.5;
+          }
+          textCanvas.setFontSize(parseInt(screenWidth * textSize));
           // 获取文字长度
           var textwidth = textCanvas.measureText(text).width;
           textCanvas.setFillStyle(textColor);
@@ -88,6 +117,20 @@ Page({
     this.setData({
       currentColor: e.target.id
     });
+  },
+
+  onchangeSize: function(e) {
+    this.setData({
+      currentSize: e.target.id
+    });
+  },
+
+  onchangeSpeed: function(e) {
+    this.setData({
+      currentSpeed: e.target.id
+    });
+    clearInterval(timer);
+    this.onLoad(this.options);
   },
 
   onchangeSettingItem: function(e) {
