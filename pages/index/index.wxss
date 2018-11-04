@@ -11,12 +11,13 @@ page {
 }
 
 .bottom {
-  height: 10%;
   width: 100%;
   position: fixed;
   bottom: 0;
+  margin-bottom: 2px; 
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .hide {
@@ -29,17 +30,16 @@ page {
 
 .section-input {
   padding: 15rpx;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 20px;
   border-color: white;
   color: white;
-  /* box-sizing: border-box; */
 }
 
 .section-image {
   margin-left: 20px;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
 }
 
 .commodity_attr_box {

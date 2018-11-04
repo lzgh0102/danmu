@@ -29,7 +29,7 @@ Page({
           var textColor = thisPage.data.currentColor;
 
           if (!text) {
-            text = "手持弹幕";
+            text = "手持led";
           }
           var textCanvas = wx.createCanvasContext('text-canvas');
 
