@@ -97,7 +97,7 @@
 .setting-title-itme {
   color: #adadad;
   text-align: center;
-  margin: 10px;
+  padding: 10px;
   font-size: 15px;
 }
 
