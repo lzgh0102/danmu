@@ -1,5 +1,5 @@
 <view>
-  <canvas id='text-canvas' canvas-id='text-canvas' bindtap='clickCanvas'></canvas>
+  <canvas id='text-canvas' canvas-id='text-canvas' bindtap='clickCanvas'style="background-color:{{currentBackgroundColor}}"></canvas>
   <view class="bottom {{showView?'show':'hide'}}">
     <input class="section-input" value="{{text}}" placeholder="请输入文字或表情" bindinput="getInput" bindfocus="focusInput" />
     <image class="section-image" src="../../image/settings.png" bindtap="clickSetting"></image>
@@ -12,6 +12,7 @@
     <cover-view class="setting-content">
       <cover-view wx:if="{{currentSettingItem=='fontColor'}}" wx:for="{{fontColorItems}}" wx:key="this" style='background-color: {{item}}' class="setting-content-color {{currentColor==item?'color-on':''}}" id="{{item}}" bindtap='onchangeColor'></cover-view>
       <cover-view wx:if="{{currentSettingItem=='fontSize'}}" wx:for="{{fontSizeItems}}" wx:key="this" class="setting-content-size {{currentSize==item.size?'size-on':''}}" id="{{item.size}}" bindtap='onchangeSize'>{{item.name}}</cover-view>
+      <cover-view wx:if="{{currentSettingItem=='backgroundColor'}}" wx:for="{{backgroundColorItems}}" wx:key="this" style='background-color: {{item}}' class="setting-content-color {{currentBackgroundColor==item?'color-on':''}}" id="{{item}}" bindtap='onchangeBackgroundColor'></cover-view>
       <cover-view wx:if="{{currentSettingItem=='fontSpeed'}}" wx:for="{{fontSpeedItems}}" wx:key="this" class="setting-content-size {{currentSpeed==item.size?'size-on':''}}" id="{{item.size}}" bindtap='onchangeSpeed'>{{item.name}}</cover-view>
     </cover-view>
   </cover-view>

@@ -1,8 +1,8 @@
 /**index.wxss**/
 
-page {
+/* page {
   background-color: rgb(0, 0, 0);
-}
+} */
 
 #text-canvas {
   position: absolute;

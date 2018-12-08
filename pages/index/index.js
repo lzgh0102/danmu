@@ -6,7 +6,8 @@ Page({
     text: "",
     showModalStatus: false,
     animationData: {},
-    currentColor: "white",
+    currentColor: "white",// font color
+    currentBackgroundColor: "black",
     currentSize: 0.5,
     currentSpeed: 5,
     currentSettingItem: "fontColor",
@@ -19,8 +20,12 @@ Page({
     }, {
       id: "fontSpeed",
       name: "文字速度"
-    }],
+      }, {
+        id: "backgroundColor",
+        name: "背景颜色"
+      }],
     fontColorItems: ["white", "red", "SpringGreen", "yellow", "lime", "green", "aqua", "blue", "purple", "DeepPink"],
+    backgroundColorItems: ["black", "red", "SpringGreen", "yellow", "lime", "green", "aqua", "blue", "purple", "DeepPink"],
     fontSizeItems: [{
       size: 0.6,
       name: "大"
@@ -116,6 +121,12 @@ Page({
   onchangeColor: function(e) {
     this.setData({
       currentColor: e.target.id
+    });
+  },
+
+  onchangeBackgroundColor: function (e) {
+    this.setData({
+      currentBackgroundColor: e.target.id
     });
   },
 
