@@ -1,4 +1,8 @@
 var timer;
+
+// 在页面中定义插屏广告
+let interstitialAd = null;
+
 Page({
 
   data: {
@@ -49,6 +53,16 @@ Page({
   },
 
   onLoad: function(options) {
+
+    // 在页面onLoad回调事件中创建插屏广告实例
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-f2c01707f7269d1b'
+      })
+      interstitialAd.onLoad(() => { })
+      interstitialAd.onError((err) => { })
+      interstitialAd.onClose(() => { })
+    };
 
     showView: (options.showView == "true" ? true : false);
 
@@ -148,6 +162,12 @@ Page({
     this.setData({
       currentSettingItem: e.target.id
     });
+    // 在适合的场景显示插屏广告
+    if (interstitialAd) {
+      interstitialAd.show().catch((err) => {
+        console.error(err)
+      })
+    };
   },
 
   getInput: function(e) {
