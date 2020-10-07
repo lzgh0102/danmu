@@ -5,6 +5,9 @@
     <image class="section-image" src="../../image/settings.png" bindtap="clickSetting"></image>
   </view>
   <cover-view animation="{{animationData}}" class="setting-box" wx:if="{{showModalStatus}}">
+    <view class="adContainer">
+      <ad unit-id="adunit-fb3aedcb71468567"></ad>
+    </view>
     <cover-view class="setting-title">
       <cover-view wx:for="{{settingItems}}" wx:key="this" class="setting-title-itme {{currentSettingItem==item.id?'setting-item-on':''}}" id="{{item.id}}" bindtap='onchangeSettingItem'>{{item.name}}</cover-view>
     </cover-view>
