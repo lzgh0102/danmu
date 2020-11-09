@@ -1,9 +1,10 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index"
   ],
-  "window":{
+  "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
