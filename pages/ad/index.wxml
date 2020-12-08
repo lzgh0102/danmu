@@ -1,0 +1,15 @@
+<view class="container">
+  <mp-navigation-bar show="{{true}}" back="{{true}}"></mp-navigation-bar>
+  <view class="page-body">
+    <view class="page-section">
+      <cover-view class="adContainer">
+        <ad unit-id="adunit-fb3aedcb71468567"></ad>
+      </cover-view>
+     <ad unit-id="adunit-063110716a2c81d7" ad-type="grid" grid-opacity="0.8" grid-count="8" ad-theme="white"></ad>
+     <cover-view class="adContainer">
+       <ad unit-id="adunit-9ac1b91fcba30141"></ad>
+     </cover-view>
+     <ad unit-id="adunit-89e2d5dda2361da3" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+    </view>
+  </view>
+</view>

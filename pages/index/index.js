@@ -172,6 +172,30 @@ Page({
 
   getInput: function(e) {
     var text = e.detail.value;
+    if (!text) {
+      return
+    }
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'msgCheck',
+      data: {
+        inputText: text
+      },
+      success(res) {
+        console.log('msgCheck success' + JSON.stringify(res))
+      },
+      fail(res) {
+        wx.showModal({
+          title: '提示',
+          content: '含有敏感信息，请重新输入'
+        })
+        console.log('msgCheck success' + JSON.stringify(res))
+        that.setData({
+          text: "请重新输入"
+        })
+      }
+    })
+    console.log('msgCheck set text');
     this.setData({
       text: text
     })
@@ -227,5 +251,12 @@ Page({
         showModalStatus: false
       })
     }.bind(this), 200)
+  },
+
+  toAdPage: function() {
+    wx.navigateTo({
+      url: '../ad/index'
+    })
   }
+
 })

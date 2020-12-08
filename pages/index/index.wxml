@@ -3,6 +3,7 @@
   <view class="bottom {{showView?'show':'hide'}}">
     <input class="section-input" value="{{text}}" placeholder="请输入文字或表情" bindinput="getInput" bindfocus="focusInput" />
     <image class="section-image" src="../../image/settings.png" bindtap="clickSetting"></image>
+    <image class="section-image" src="../../image/heart.png" bindtap="toAdPage"></image>
   </view>
   <cover-view animation="{{animationData}}" class="setting-box" wx:if="{{showModalStatus}}">
     <cover-view class="setting-title">
